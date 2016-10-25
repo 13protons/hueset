@@ -1,0 +1,26 @@
+{
+  "name": "hueset",
+  "version": "1.0.0",
+  "description": "A node module to set Phillips hue bulb parameters using env or cli params",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "hueset": "cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alanguir/hueset.git"
+  },
+  "author": "Alan Languirand",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alanguir/hueset/issues"
+  },
+  "homepage": "https://github.com/alanguir/hueset#readme",
+  "dependencies": {
+    "color": "^0.11.3",
+    "commander": "^2.9.0"
+  }
+}
