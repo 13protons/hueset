@@ -39,7 +39,7 @@ light.on(color);
 
 ### .on([color])
 
-Turns on the light referenced by the `new Hue.light` constructor. If a color is supplied, the light is set to that color when it is turned on. Lights that are already on will be set to the new color. If no color is supplied, the light state will simply be set to on and use the previous color values. Lights that do not support color will simply use the brightness value of the supplied color (i.e. it's safe to set Philips Hue White bulb to 'purple'.)
+Turns on the light referenced by the `new Hue.light` constructor. If a color is supplied, the light is set to that color when it is turned on. Lights that are already on will be set to the new color. If no color is supplied, the light's `on` state will be set to 'true' and use the previous color values. Lights that do not support color will use the computed brightness value of the supplied color (i.e. it's safe to set Philips Hue White bulb to 'purple'.)
 
 ```javascript
 light.on('red');
@@ -47,10 +47,10 @@ light.on('red');
 
 ### .off()
 
-Turns off the light referenced by the `new Hue.light` constructor. Note that this simply set's the light's on state to 'false', so subsequent calls to `.on()` will restore the light to the exact same color and brightness from before `.off()` was called.
+Turns off the light referenced by the `new Hue.light` constructor. Note that this only set's the light's `on` state to 'false', so subsequent calls to `.on()` will restore the light to the exact same color and brightness from before `.off()` was called.
 
 ```javascript
-light.off('red');
+light.off();
 ```
 
 ## Global Usage
