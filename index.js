@@ -4,18 +4,26 @@ var Color = require('color');
 module.exports = {
   light: light
 }
+var defaults = require('./defaults.js');
 
 function light(user, ip, id) {
+  user = user || defaults.user;
+  ip = ip || defaults.ip;
+  id = id || defaults.light;
+
   var options = {
     host: ip,
     path: '/api/' + user + '/lights/' + id + '/state',
     method: 'PUT'
   };
-  var _color = '#ffffff'
 
   this.on = function(color) {
-    color = color || _color;
-    var hueSettings = strToHuehsb(color);
+    var hueSettings = {};
+
+    if (color) {
+      hueSettings = strToHuehsb(color);
+    }
+
     hueSettings.on = true
 
     return setLight(hueSettings);

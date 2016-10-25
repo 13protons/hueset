@@ -8,7 +8,7 @@ var defaults = require('./defaults.js');
 program
   .version('0.0.1')
   .option('-u, --user [value]', 'Hue User Name', defaults.user)
-  .option('-i, --ip [value]', 'IP addres of hue hub', defaults.ip)
+  .option('-i, --ip [value]', 'IP address of hue hub', defaults.ip)
   .option('-l, --light <n>', 'Light number (1, 2, etc.)', defaults.light)
   .option('-c, --color [value]', 'Any valid CSS color (\'red\', #00ff33, etc.)', defaults.color)
   .option('-o, --off', 'Turn off light specified by --light')

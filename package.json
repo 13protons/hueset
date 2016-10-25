@@ -13,8 +13,8 @@
     "type": "git",
     "url": "git+https://github.com/alanguir/hueset.git"
   },
-  "author": "Alan Languirand",
-  "license": "ISC",
+  "author": "13protons",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/alanguir/hueset/issues"
   },
