@@ -47,7 +47,7 @@ function err(e) {
 
 function strToHuehsb(str){
   var color = Color(str);
-  var obj = color.hsv();
+  var obj = color.hsv().object();
 
   return {
     sat: of255(obj.s),
