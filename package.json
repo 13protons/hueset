@@ -1,6 +1,6 @@
 {
   "name": "hueset",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "A node module to set Phillips hue bulb parameters using env or cli params",
   "main": "index.js",
   "scripts": {
