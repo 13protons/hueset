@@ -45,6 +45,32 @@ Turns on the light referenced by the `new Hue.light` constructor. If a color is 
 light.on('red');
 ```
 
+### .get(cb(err, resp))
+
+Get the current state of a light. This works for both color bulbs and dimmable lights. Accepts a callback function that takes two parameters, `err` and `response` - `err` is null for successful responses.
+
+Response is in the format:
+```javascript
+{
+  on: Bool,
+  color: Color
+}
+```
+
+where `on` is a boolean, and `color` is an abstract Color object created with qix's [color module](https://www.npmjs.com/package/color)
+
+```javascript
+light.get(function(err, res){
+  if (err) {
+    // problem getting light info
+    return;
+  }
+  console.log(res.on); // true or false
+  console.log(res.color) // Color object
+  console.log(res.color.hex()) // something like #ff0000
+});
+```
+
 ### .off()
 
 Turns off the light referenced by the `new Hue.light` constructor. Note that this only set's the light's `on` state to 'false', so subsequent calls to `.on()` will restore the light to the exact same color and brightness from before `.off()` was called.
@@ -94,6 +120,15 @@ command line:
 ```bash
 $ source .env
 $ hueset -c red
+```
+
+Omitting other actions (no color, no 'off' flag) returns a light's properties:
+
+```bash
+$ source .env
+$ hueset
+{ on: true,
+  color: { model: 'hsv', color: [ 120, 100, 50 ], valpha: 1 } }
 ```
 
 ### Environment Vars

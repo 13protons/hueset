@@ -18,6 +18,14 @@ var light = new hue.light(program.user, program.ip, program.light);
 
 if (program.off) {
   light.off();
-} else {
+} else if(program.color) {
   light.on(program.color);
+} else {
+  light.get(function(err, res){
+    if (err) {
+      console.log(err);
+      return;
+    }
+    console.log(res);
+  })
 }

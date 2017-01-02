@@ -21,6 +21,7 @@
   "homepage": "https://github.com/alanguir/hueset#readme",
   "dependencies": {
     "color": "^1.0.3",
-    "commander": "^2.9.0"
+    "commander": "^2.9.0",
+    "request": "^2.79.0"
   }
 }
